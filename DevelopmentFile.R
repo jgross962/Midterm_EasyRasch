@@ -36,7 +36,15 @@ setMethod("initialize","Rasch",
 test1 = new("Rasch")
 test2 = new("Rasch", name="Jon",a =c(2,4,3), y =c(1,1,0))
 
+probFunction = function(raschObj, theta){
+  P.vector = exp(theta-raschObj@a)/(1+exp(theta-raschObj@a))
+  Q.vector = 1-P.vector
+  return(P.vector)
+}
 
+theta = 3.5
+
+probFunction(test1,theta)
 
 #3 Call This
 #package.skeleton()
