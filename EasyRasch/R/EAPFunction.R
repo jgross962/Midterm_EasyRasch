@@ -19,16 +19,15 @@
 #' @export
 setGeneric(name="EAPFunction",
            def=function(raschObj = "Rasch",
-                        lower = "numeric",
-                        upper = "numeric"
+                        lower = -6,
+                        upper = 6
            ){
              standardGeneric("EAPFunction")
            })
 
 #' @export
 setMethod(f="EAPFunction",
-          definition=function(raschObj="Rasch",lower=-6, upper = -6){
-            
+          definition=function(raschObj="Rasch",lower=-6, upper = 6){
               numeratorFun = function(thetaInput){
                 sapply(thetaInput,
                        function(thetaInput) thetaInput*likelihoodFunction(raschObj,thetaInput)*priorProbFunction(thetaInput))
@@ -38,10 +37,15 @@ setMethod(f="EAPFunction",
                      function(thetaInput) likelihoodFunction(raschObj,thetaInput)*priorProbFunction(thetaInput))
             }
          
-            numerator = integrate(numeratorFun,lower,upper)
+            print(paste("Lower",lower))
+            print(paste("Upper",upper))
+            
+            numerator = integrate(numeratorFun,lower = lower,upper = upper)
             print(numerator)
+            # numerator = integrate(numeratorFun,-6,6)
+            # print(numerator)
+            # 
             denominator = integrate(denFun,lower,upper)
-            print(denominator)
             return(numerator[[1]]/denominator[[1]])
           }
 )

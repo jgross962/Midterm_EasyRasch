@@ -4,7 +4,7 @@
 \alias{EAPFunction}
 \title{Calculates Expected A posteriori value for proposed theta}
 \usage{
-EAPFunction(raschObj = "Rasch", lower = "numeric", upper = "numeric")
+EAPFunction(raschObj = "Rasch", lower = -6, upper = 6)
 }
 \arguments{
 \item{raschObj}{an object containing a students name, ability and whether he got a question correct}

@@ -6,8 +6,8 @@
 #' @param theta a numeric value representing the ability of a student
 #'
 #' @return A data frame containing probability of a correct answer, and the probability of the students actual outcome
-#' \item \code{P.vector} a vector containing the probabilities the student gets a each correct
-#' \item \code{PQ} a vector containing the probabilities the student got the output he did
+#' P.vector- a vector containing the probabilities the student gets a each correct
+#' PQ- a vector containing the probabilities the student got the output he did
 #' @author Jonathan Gross <\email{jonathan.gross@@wustl.edu}>
 #' @note Probablity calculated as per equation 1 in documentation
 #' @examples

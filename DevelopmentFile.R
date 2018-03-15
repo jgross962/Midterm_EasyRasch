@@ -43,54 +43,16 @@ priorProbFunction(theta)
 dnorm(theta, mean = 0, sd = 3) ## Two Values shuold be equal
 
 ## Test EAP Funtion
-test3 = new("Rasch", name="Jon",a =c(.1,.1), y =c(1,1))
-### Test without limits specified
+test3 = new("Rasch", name="Jon",a =c(1,.1,2), y =c(1,1,0))
+### Test with limits specified
 EAPFunction(test3,-6,6)
-# 
-# ## Debugging Integrate
-# 
-test3 = new("Rasch", name="Jon",a =c(.1,.1,.2), y =c(1,1,3))
-raschObj = test3
-numeratorFun = function(thetaInput){
-  sapply(thetaInput,
-         function(thetaInput) thetaInput*likelihoodFunction(raschObj,thetaInput)*priorProbFunction(thetaInput))
-}
-integrate(numeratorFun,-5,5)
+EAPFunction(test3,-15,15) # Shuold be slightly higher than above result
+EAPFunction(test3,-25,25)# Shuold be similar to above
+test4 = new("Rasch", name="Jon2",a =c(1,1.5,2), y =c(1,1,1)) ## Should get higher EAP estimates since got harder questions right
+EAPFunction(test4,-6,6)
+EAPFunction(test4,-15,15) # Shuold be slightly higher than above result
+EAPFunction(test4,-25,25)# Shuold be similar to above 
+### Test w/o limits specified (should match result above for bounds +/- 6)
+EAPFunction(test3) 
+EAPFunction(test4)
 
-numeratorFun(1)
-numeratorFun(2)
-numeratorFun(c(1,2))
-numeratorFun = Vectorize(numeratorFun)
-numeratorFun(2)
-numeratorFun(c(1,2))
-
-# testFun = function(x,y){x+y}
-# integrate(testFun,0,5,y=0)
-# 
-# test3 = new("Rasch", name="Jon",a =c(.1,.1,.2), y =c(1,1,3))
-# 
-# numeratorFun = function(raschInput,thetaInput){
-#   thetaInput*likelihoodFunction(raschInput,thetaInput)*priorProbFunction(thetaInput)
-# }
-# likelihoodFunction(test3,1)
-# likelihoodFunction(test3,c(0,1))
-# integrate(likelihoodFunction,raschObj=test3,-5,5)
-# priorProbFunction(1)
-# integrate(priorProbFunction,-5,5)
-# numeratorFun(test3,1)
-# integrate(numeratorFun,-6,6,raschInput = test3)
-# 
-# 
-# PFun = function(raschObj,theta){
-#   exp(theta-raschObj@a)/(1+exp(theta-raschObj@a))
-# 
-# }
-# 
-# sapply(c(1,2),PFun, raschObj = test3)
-# 
-# denFun = function(thetaInput){
-#   likelihoodFunction(raschObj,thetaInput)*priorProbFunction(thetaInput)
-# }
-# 
-# numerator = integrate(numeratorFun,lower,upper)
-# denominator = integrate(denFun,lower,upper)

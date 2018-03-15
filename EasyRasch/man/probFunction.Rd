@@ -13,8 +13,8 @@ probFunction(raschObj = "Rasch", theta = "numeric")
 }
 \value{
 A data frame containing probability of a correct answer, and the probability of the students actual outcome
-\item \code{P.vector} a vector containing the probabilities the student gets a each correct
-\item \code{PQ} a vector containing the probabilities the student got the output he did
+P.vector- a vector containing the probabilities the student gets a each correct
+PQ- a vector containing the probabilities the student got the output he did
 }
 \description{
 Calcualtes probablitiy of a correct response given theta (ability) and a(difficulty parameter)
