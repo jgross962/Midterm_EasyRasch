@@ -34,7 +34,7 @@ setMethod(f="probFunction",
               Q.vector = 1-P.vector
 
               PQ = P.vector
-              PQ[which(y==1)] = Q.vector[which(y==1)]
+              PQ[which(raschObj@y==0)] = Q.vector[which(raschObj@y==0)]
               return(data.frame(P.vector,PQ))
             
           }
