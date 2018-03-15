@@ -22,8 +22,8 @@ Calls probFunction
 }
 \examples{
 
-testRaschObj = new("Rasch", name="Jon",a =c(2,4,3), y =c(1,1,0))
-theta = 3.5
+testRaschObj <- new("Rasch", name="Jon",a =c(2,4,3), y =c(1,1,0))
+theta <- 3.5
 likelihoodFunction(test1,theta)
 }
 \author{

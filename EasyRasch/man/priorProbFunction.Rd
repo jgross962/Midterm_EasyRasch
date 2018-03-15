@@ -19,7 +19,6 @@ Calcualtes the height of a zero mean, standard deviation = 3 normal distribution
 uses dnorm to calculate height
 }
 \examples{
-
 theta = 3.5
 priorProbFunction(theta)
 }
