@@ -12,7 +12,7 @@ likelihoodFunction(raschObj = "Rasch", theta = "numeric")
 \item{theta}{a numeric value representing a propsed theta value}
 }
 \value{
-The likelihood - the probablitiy that the proposed theta value is correct given the data
+The likelihood -- the probablitiy that the proposed theta value is correct given the data
 }
 \description{
 Calcualtes the like likelihood using rasch model of a proposed theta value, using product of probablities

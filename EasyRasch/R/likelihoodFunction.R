@@ -5,7 +5,7 @@
 #' @param raschObj an object containing a students name, ability and whether he got a question correct
 #' @param theta a numeric value representing a propsed theta value
 #'
-#' @return The likelihood - the probablitiy that the proposed theta value is correct given the data
+#' @return The likelihood -- the probablitiy that the proposed theta value is correct given the data
 #' @author Jonathan Gross <\email{jonathan.gross@@wustl.edu}>
 #' @note Calls probFunction
 #' @examples

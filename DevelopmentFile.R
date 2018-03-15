@@ -42,4 +42,8 @@ likelihoodFunction(test2,thetaBetter) ## Should return larger value
 priorProbFunction(theta)
 dnorm(theta, mean = 0, sd = 3) ## Two Values shuold be equal
 
+## Test EAP Funtion
+### Test without limits specified
+EAPFunction(test2)
+
 
