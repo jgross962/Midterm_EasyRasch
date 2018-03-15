@@ -20,7 +20,7 @@ Expected value of theta
 Calcualtes Expected A posteriori value using Rasch model, as a fucntion of the RaschObject (data)
 }
 \note{
-Calls likelihood funcoitn and priorProbFunction
+Calls likelihoodFunction and priorProbFunction
 }
 \examples{
 

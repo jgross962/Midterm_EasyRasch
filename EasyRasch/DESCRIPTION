@@ -15,4 +15,5 @@ Collate:
   'likelihoodFunction.R'
   'priorProbFunction.R'
   'EAPFunction.R'
+  'print.R'
 RoxygenNote: 6.0.1

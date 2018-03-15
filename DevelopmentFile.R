@@ -54,5 +54,7 @@ EAPFunction(test4,-15,15) # Shuold be slightly higher than above result
 EAPFunction(test4,-25,25)# Shuold be similar to above 
 ### Test w/o limits specified (should match result above for bounds +/- 6)
 EAPFunction(test3) 
-EAPFunction(test4)
+est = EAPFunction(test4)
+
+print(test3)
 

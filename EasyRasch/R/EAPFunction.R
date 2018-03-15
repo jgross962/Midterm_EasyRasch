@@ -8,7 +8,7 @@
 #'
 #' @return Expected value of theta
 #' @author Jonathan Gross <\email{jonathan.gross@@wustl.edu}>
-#' @note Calls likelihood funcoitn and priorProbFunction
+#' @note Calls likelihoodFunction and priorProbFunction
 #' @examples
 #' 
 #' testRaschObj = new("Rasch", name="Jon",a =c(2,4,3), y =c(1,1,0))
