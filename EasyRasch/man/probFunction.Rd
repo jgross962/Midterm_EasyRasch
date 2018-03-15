@@ -20,7 +20,7 @@ A data frame containing probability of a correct answer, and the probability of 
 Calcualtes probablitiy of a correct response given theta (ability) and a(difficulty parameter)
 }
 \note{
-Add If desired
+Probablity calculated as per equation 1 in documentation
 }
 \examples{
 

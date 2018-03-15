@@ -1,6 +1,7 @@
 #Jonathan Gross
 #Midterm
 # Start Time: 6:59 PM 3/14/2018
+# Break: 8:13 - 8:58 PM
 
 
 rm(list = ls())
@@ -31,7 +32,11 @@ test2@a =c(5,5,5)
 test2@y = c(1,1,1)
 probFunction(test2,theta)
 
-
+## Test Likelihood Function
+theta = 2
+likelihoodFunction(test2,theta) ## Should return small value
+thetaBetter = 5
+likelihoodFunction(test2,thetaBetter) ## Should return larger value
 
 #10 Add Class (See Poisson File)
 #10a. Rerun 8

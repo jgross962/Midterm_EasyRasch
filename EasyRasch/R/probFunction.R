@@ -9,7 +9,7 @@
 #' \item \code{P.vector} a vector containing the probabilities the student gets a each correct
 #' \item \code{PQ} a vector containing the probabilities the student got the output he did
 #' @author Jonathan Gross <\email{jonathan.gross@@wustl.edu}>
-#' @note Add If desired
+#' @note Probablity calculated as per equation 1 in documentation
 #' @examples
 #' 
 #' testRaschObj = new("Rasch", name="Jon",a =c(2,4,3), y =c(1,1,0))
@@ -29,7 +29,6 @@ setGeneric(name="probFunction",
 #' @export
 setMethod(f="probFunction",
           definition=function(raschObj="Rasch",theta="numeric"){
-              # Probability as calculated by Eq 1
               P.vector = exp(theta-raschObj@a)/(1+exp(theta-raschObj@a))
               Q.vector = 1-P.vector
 
