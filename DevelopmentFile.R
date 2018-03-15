@@ -43,7 +43,32 @@ priorProbFunction(theta)
 dnorm(theta, mean = 0, sd = 3) ## Two Values shuold be equal
 
 ## Test EAP Funtion
+test3 = new("Rasch", name="Jon",a =c(.1,.1), y =c(1,1))
 ### Test without limits specified
-EAPFunction(test2)
+EAPFunction(test3)
+
+## Debugging Integrate
+
+testFun = function(x,y){x+y}
+integrate(testFun,0,5,y=0)
+
+test3 = new("Rasch", name="Jon",a =c(.1,.1), y =c(1,1))
+raschObj = test3
 
 
+numeratorFun = function(thetaInput){
+  thetaInput*likelihoodFunction(raschObj,thetaInput)*priorProbFunction(thetaInput)
+}
+likelihoodFunction(raschObj,1)
+priorProbFunction(1)
+numeratorFun(1)
+integrate(numeratorFun,-6,6)
+
+
+
+denFun = function(thetaInput){
+  likelihoodFunction(raschObj,thetaInput)*priorProbFunction(thetaInput)
+}
+
+numerator = integrate(numeratorFun,lower,upper)
+denominator = integrate(denFun,lower,upper)

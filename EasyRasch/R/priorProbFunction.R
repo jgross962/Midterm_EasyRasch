@@ -8,7 +8,6 @@
 #' @author Jonathan Gross <\email{jonathan.gross@@wustl.edu}>
 #' @note uses dnorm to calculate height
 #' @examples
-#' 
 #' theta = 3.5
 #' priorProbFunction(theta)
 #' @rdname priorProbFunction

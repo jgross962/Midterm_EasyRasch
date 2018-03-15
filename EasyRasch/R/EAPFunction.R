@@ -29,16 +29,16 @@ setGeneric(name="EAPFunction",
 setMethod(f="EAPFunction",
           definition=function(raschObj="Rasch",lower=-6, upper = -6){
             
-            numeratorFun = function(thetaInput){
-              thetaInput*likelihoodFunction(raschObj,thetaInput)*priorProbFunction(thetaInput)
-            }
+              numeratorFun = function(thetaInput){
+                thetaInput*likelihoodFunction(raschObj,thetaInput)*priorProbFunction(thetaInput)
+              }
             denFun = function(thetaInput){
               likelihoodFunction(raschObj,thetaInput)*priorProbFunction(thetaInput)
             }
             
             numerator = integrate(numeratorFun,lower,upper)
             denominator = integrate(denFun,lower,upper)
-            return(numerator/denominator)
+            return(numerator[[1]]/denominator[[1]])
           }
 )
 
