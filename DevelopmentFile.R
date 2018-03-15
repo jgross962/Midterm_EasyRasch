@@ -12,15 +12,13 @@ library(roxygen2)
 # 1.) Write Code
 #6.) Can delete this after function is written into its own file
 
-probFunction = function(raschObj, theta){
-  P.vector = exp(theta-raschObj@a)/(1+exp(theta-raschObj@a))
-  Q.vector = 1-P.vector
-  return(P.vector)
-}
+# probFunction = function(raschObj, theta){
+#   P.vector = exp(theta-raschObj@a)/(1+exp(theta-raschObj@a))
+#   Q.vector = 1-P.vector
+#   return(P.vector)
+# }
+# 
 
-theta = 3.5
-
-probFunction(test1,theta)
 
 #3 Call This
 package.skeleton()
@@ -46,11 +44,9 @@ document(current.code)
 #Test Rasch
 test1 = new("Rasch")
 test2 = new("Rasch", name="Jon",a =c(2,4,3), y =c(1,1,0))
+theta = 3.5
+probFunction(test1,theta)
 
-y = 1:4
-lambda = 2
-poisson.lik(lambda,y)
-new("Poisson")
 
 #10 Add Class (See Poisson File)
 #10a. Rerun 8
