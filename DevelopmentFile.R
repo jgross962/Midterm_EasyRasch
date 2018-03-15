@@ -1,17 +1,42 @@
+#Jonathan Gross
+#Midterm
+# Start Time: 6:59 PM 3/14/2018
+
 
 # 2.) Set Up Packages
 rm(list = ls())
-setwd('C:/Users/jgros/Desktop/5625/Poisson_Master/')
+setwd('C:/Users/jgros/Documents/GitHub/Midterm_EasyRasch')
 library(devtools)
 library(roxygen2)
 
 # 1.) Write Code
 #6.) Can delete this after function is written into its own file
-# poisson.lik = function(lambda,y){
-#   n = length(y)
-#   logl = sum(y)*log(lambda) - n*lambda
-#   return(-logl)
-# }
+
+#Create Rasch Class
+setClass(Class="Rasch",
+         representation = representation(
+           name = "character",
+           a = "numeric",
+           y = "numeric"
+         ),
+         prototype = prototype(
+           name= c(),
+           a = c(),
+           numeric()
+         )
+)
+
+setMethod("initialize","Rasch",
+          function(.Object,...){
+            value = callNextMethod()
+            return(value)
+          }
+)
+#Test Rasch
+test1 = new("Rasch")
+test2 = new("Rasch", name="Jon",a =c(2,4,3), y =c(1,1,0))
+
+
 
 #3 Call This
 #package.skeleton()
