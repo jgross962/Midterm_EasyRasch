@@ -21,7 +21,7 @@
 #' @export
 setGeneric(name="probFunction",
            def=function(raschObj = "Rasch",
-                        theta = "numeric",
+                        theta = "numeric"
            ){
              standardGeneric("probFunction")
            })
@@ -30,7 +30,7 @@ setGeneric(name="probFunction",
 setMethod(f="probFunction",
           definition=function(raschObj="Rasch",theta="numeric"){
               # Probability as calculated by Eq 1
-              P.vector = exp(theta-raschObj@a)/(1+exp(theta-raschObj@a)
+              P.vector = exp(theta-raschObj@a)/(1+exp(theta-raschObj@a))
               Q.vector = 1-P.vector
 
               PQ = P.vector
