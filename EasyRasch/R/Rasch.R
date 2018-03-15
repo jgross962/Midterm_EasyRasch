@@ -26,10 +26,29 @@ setClass(Class="Rasch",
            numeric()
          )
 )
+#Set Initalize Method
 #' @export
 setMethod("initialize","Rasch",
           function(.Object,...){
             value = callNextMethod()
+            validObject(value)
             return(value)
           }
 )
+
+#Check User has properly created Rasch Object Properly
+#' @export
+setValidity("Rasch",function(object){
+  if (class(object@name) != "character"){
+    return("@name is not a valid value")
+  }
+  if (class(object@a) != "numeric"){
+    return("@a is not a valid value")
+  }
+  if (class(object@y) != "numeric"){
+    return("@y is not a valid value")
+  }
+  if (length(object@a) != length(object@y)){
+    return("@a and @y must have the same length and do not")
+  }
+})

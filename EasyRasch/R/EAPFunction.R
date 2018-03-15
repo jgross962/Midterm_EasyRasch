@@ -28,23 +28,20 @@ setGeneric(name="EAPFunction",
 #' @export
 setMethod(f="EAPFunction",
           definition=function(raschObj="Rasch",lower=-6, upper = 6){
+            
+            # Numerator Integrand is theta*L(theta|y)*pi(theta)
+            # Use sapply so that when integrate passes in multiple thetas, only handles on at a time
               numeratorFun = function(thetaInput){
                 sapply(thetaInput,
                        function(thetaInput) thetaInput*likelihoodFunction(raschObj,thetaInput)*priorProbFunction(thetaInput))
               }
+              # Denominator Integrand is L(theta|y)*pi(theta)
             denFun = function(thetaInput){
               sapply(thetaInput,
                      function(thetaInput) likelihoodFunction(raschObj,thetaInput)*priorProbFunction(thetaInput))
             }
-         
-            print(paste("Lower",lower))
-            print(paste("Upper",upper))
             
             numerator = integrate(numeratorFun,lower = lower,upper = upper)
-            print(numerator)
-            # numerator = integrate(numeratorFun,-6,6)
-            # print(numerator)
-            # 
             denominator = integrate(denFun,lower,upper)
             return(numerator[[1]]/denominator[[1]])
           }

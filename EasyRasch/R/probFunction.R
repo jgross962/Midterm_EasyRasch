@@ -29,9 +29,13 @@ setGeneric(name="probFunction",
 #' @export
 setMethod(f="probFunction",
           definition=function(raschObj="Rasch",theta="numeric"){
+            # Calculate P as per equation 1 in directions
               P.vector = exp(theta-raschObj@a)/(1+exp(theta-raschObj@a))
+              # Q = 1 -P
               Q.vector = 1-P.vector
 
+              # PQ should contain p if y is 1, else contains q
+              # set all values to p, then update incorrect values to q using which() function on y vector
               PQ = P.vector
               PQ[which(raschObj@y==0)] = Q.vector[which(raschObj@y==0)]
               return(data.frame(P.vector,PQ))
@@ -39,15 +43,3 @@ setMethod(f="probFunction",
           }
 )
 
-
-## IF S3 Instead
-# probFunction <-
-# function(raschObj, theta){
-#   # Probability as calculated by Eq 1
-#   P.vector = exp(theta-raschObj@a)/(1+exp(theta-raschObj@a)
-#   Q.vector = 1-P.vector
-# 
-#   PQ = P.vector 
-#   PQ[which(y==1)] = Q.vector[which(y==1)]
-#   return(data.frame(P.vector,PQ))
-# }

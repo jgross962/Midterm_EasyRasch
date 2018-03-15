@@ -1,14 +1,16 @@
 #Jonathan Gross
-#Midterm
+#Midterm -Spring 2018
 # Start Time: 6:59 PM 3/14/2018
 # Break: 8:13 - 8:58 PM
 
-
+# Clear Workspace
 rm(list = ls())
 setwd('C:/Users/jgros/Documents/GitHub/Midterm_EasyRasch')
 library(devtools)
 library(roxygen2)
 
+## Rerun this section everytime a function is changed or added
+#package.skeleton() # Run in very beginning to format code into a package
 current.code = as.package('easyRasch')
 load_all(current.code)
 document(current.code)
@@ -17,12 +19,14 @@ document(current.code)
 # Tests
 
 ##Test Rasch
-### Test as empty object
-test1 = new("Rasch")
+test1 = new("Rasch", name="Jon",a =1, y =1)
 test1
-### Test with values
 test2 = new("Rasch", name="Jon",a =c(2,4,3), y =c(1,1,0))
 test2
+### Test to ensure set Validity works 
+testBad1 = new("Rasch", name=3,a =c(2,4,3), y =c(1,1,0))
+testBad2 = new("Rasch", name="Jon",a =c(2,4,3,5), y =c(1,1,0))
+
 
 ## Test Prob Function
 theta = 3.5
@@ -56,5 +60,6 @@ EAPFunction(test4,-25,25)# Shuold be similar to above
 EAPFunction(test3) 
 est = EAPFunction(test4)
 
+## Test Print
 print(test3) # Print Rasch Object
 print("hello") # Print non-rasch object

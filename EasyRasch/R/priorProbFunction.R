@@ -24,7 +24,7 @@ setGeneric(name="priorProbFunction",
 #' @export
 setMethod(f="priorProbFunction",
           definition=function(theta="numeric"){
-          
+            # Use dnorm as per directions
             return(dnorm(theta,mean = 0, sd =3))
           }
 )

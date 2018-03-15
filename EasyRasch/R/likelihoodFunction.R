@@ -27,6 +27,7 @@ setGeneric(name="likelihoodFunction",
 #' @export
 setMethod(f="likelihoodFunction",
           definition=function(raschObj="Rasch",theta="numeric"){
+            # Likelihood is product of PQ vector as per directions
             PQ = probFunction(raschObj,theta)[[2]]
             return(prod(PQ))
           }
