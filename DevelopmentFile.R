@@ -2,6 +2,7 @@
 #Midterm -Spring 2018
 # Start Time: 6:59 PM 3/14/2018
 # Break: 8:13 - 8:58 PM
+# Finish Time 11:59 PM 3/14/2018
 
 # Clear Workspace
 rm(list = ls())
