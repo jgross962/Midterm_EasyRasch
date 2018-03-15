@@ -56,5 +56,5 @@ EAPFunction(test4,-25,25)# Shuold be similar to above
 EAPFunction(test3) 
 est = EAPFunction(test4)
 
-print(test3)
-
+print(test3) # Print Rasch Object
+print("hello") # Print non-rasch object

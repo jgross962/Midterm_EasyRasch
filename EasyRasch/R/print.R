@@ -15,10 +15,11 @@
 
 #' @export
 setMethod(f="print",
-          definition=function(raschObj="Rasch"){
+          signature(x="Rasch"),
+          definition=function(x){
             
-            estimate = EAPFunction(raschObj)
-            print(paste("The EAP estimate for ",raschObj@name, " is ", estimate))
+            estimate = EAPFunction(x)
+            print(paste("The EAP estimate for ",x@name, " is ", estimate))
             
           }
 )
