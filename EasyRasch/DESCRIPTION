@@ -1,0 +1,13 @@
+Package: EasyRasch
+Type: Package
+Title: Easy Rasch Package - Gross Midterm
+Version: 1.0
+Date: 2018-03-14
+Author: Jonathan Gross
+Maintainer: Jonathan Gross <jonathan.gross@@wustl.edu>
+Description: A package for Pol Sci 5625 Midterm. Contains a functions to estimate a students ability using a Rasch Model
+License: GPL(>2)
+RoxygenNote: 6.0.1
+Collate:
+  'Rasch.R'
+  'probFunction.R'
