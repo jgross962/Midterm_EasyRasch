@@ -13,4 +13,5 @@ Collate:
   'Rasch.R'
   'probFunction.R'
   'likelihoodFunction.R'
+  'priorProbFunction.R'
 RoxygenNote: 6.0.1

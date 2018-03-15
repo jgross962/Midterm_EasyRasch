@@ -14,12 +14,12 @@ load_all(current.code)
 document(current.code)
 
 
-# Test
+# Tests
+
 ##Test Rasch
 ### Test as empty object
 test1 = new("Rasch")
 test1
-
 ### Test with values
 test2 = new("Rasch", name="Jon",a =c(2,4,3), y =c(1,1,0))
 test2
@@ -38,7 +38,8 @@ likelihoodFunction(test2,theta) ## Should return small value
 thetaBetter = 5
 likelihoodFunction(test2,thetaBetter) ## Should return larger value
 
-#10 Add Class (See Poisson File)
-#10a. Rerun 8
-#11 Update Function poisson.lik
+## Test Prior Probability Function
+priorProbFunction(theta)
+dnorm(theta, mean = 0, sd = 3) ## Two Values shuold be equal
+
 

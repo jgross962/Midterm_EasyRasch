@@ -18,7 +18,7 @@ The likelihood - the probablitiy that the proposed theta value is correct given 
 Calcualtes the like likelihood using rasch model of a proposed theta value, using product of probablities
 }
 \note{
-Has some redundancy with probFunction
+Calls probFunction
 }
 \examples{
 

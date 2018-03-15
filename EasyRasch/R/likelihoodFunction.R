@@ -7,7 +7,7 @@
 #'
 #' @return The likelihood - the probablitiy that the proposed theta value is correct given the data
 #' @author Jonathan Gross <\email{jonathan.gross@@wustl.edu}>
-#' @note Has some redundancy with probFunction
+#' @note Calls probFunction
 #' @examples
 #' 
 #' testRaschObj = new("Rasch", name="Jon",a =c(2,4,3), y =c(1,1,0))
@@ -27,10 +27,8 @@ setGeneric(name="likelihoodFunction",
 #' @export
 setMethod(f="likelihoodFunction",
           definition=function(raschObj="Rasch",theta="numeric"){
-            P.vector = exp(theta-raschObj@a)/(1+exp(theta-raschObj@a))
-            Q.vector = 1-P.vector
-            PQ = P.vector
-            PQ[which(raschObj@y==0)] = Q.vector[which(raschObj@y==0)]
+            
+            PQ = probFunction(raschObj,theta)[[2]]
             return(prod(PQ))
             
           }
